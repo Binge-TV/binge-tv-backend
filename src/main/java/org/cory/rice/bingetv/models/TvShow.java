@@ -13,10 +13,10 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "TV Shows")
-public class Show {
+public class TvShow {
 	
 	@Id
-	private Integer id;
+	private Integer showId;
 	
 	@Column(name = "Name")
 	private String name;
