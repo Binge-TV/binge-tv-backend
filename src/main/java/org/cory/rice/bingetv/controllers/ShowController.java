@@ -1,14 +1,12 @@
 package org.cory.rice.bingetv.controllers;
 
 
-import org.cory.rice.bingetv.models.TvShow;
 import org.cory.rice.bingetv.repository.ShowRepository;
 import org.cory.rice.bingetv.services.ApiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.List;
 
 @CrossOrigin(origins = {"http://localhost:3000/"})
 @RestController
@@ -18,9 +16,16 @@ public class ShowController {
 	@Autowired
 	private ShowRepository showRepository;
 	
+	private ApiService apiService;
+	
+	public ShowController(ApiService apiService) {
+		this.apiService = apiService;
+	}
+	
 	@GetMapping
-	public String searchShowByName(String query) throws IOException {
-		return ApiService.ApiCallByName(query);
+	public String searchShowByName(@RequestBody  String query) throws IOException {
+		System.out.println(query);
+		return  apiService.ApiCallByName(query);
 	}
 	
 	@GetMapping("{showId}")
