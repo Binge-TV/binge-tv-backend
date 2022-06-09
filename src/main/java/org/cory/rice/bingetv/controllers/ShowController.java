@@ -22,15 +22,14 @@ public class ShowController {
 		this.apiService = apiService;
 	}
 	
-	@GetMapping
+	@PostMapping
 	public String searchShowByName(@RequestBody  String query) throws IOException {
-		System.out.println(query);
 		return  apiService.ApiCallByName(query);
 	}
 	
 	@GetMapping("{showId}")
-	public String getShowDetails(@PathVariable Integer showId) throws IOException {
-		return ApiService.ApiCallById(showId);
+	public String getShowDetails(@PathVariable String showId) throws IOException {
+		return apiService.ApiCallById(showId);
 	}
 	
 	

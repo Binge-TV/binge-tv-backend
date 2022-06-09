@@ -25,14 +25,14 @@ public class ApiService extends OkHttpClient {
 		this.bingConfig = bingConfig;
 	}
 	
-	public static  String ApiCallById(Integer showId) throws IOException {
+	public static  String ApiCallById(String showId) throws IOException {
 		
 		HttpUrl httpByIdUrl = new HttpUrl.Builder()
 				.scheme("http")
 				.host("api.themoviedb.org")
 				.addPathSegment("3")
 				.addPathSegment("tv")
-				.addPathSegment(String.valueOf(showId))
+				.addPathSegment(showId)
 				.addQueryParameter("api_key", bingConfig.apiKey())
 				.build();
 		
