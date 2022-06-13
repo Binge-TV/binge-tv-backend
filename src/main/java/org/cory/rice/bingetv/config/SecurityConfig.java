@@ -1,38 +1,95 @@
 package org.cory.rice.bingetv.config;
 
+import com.nimbusds.jose.jwk.JWK;
+import com.nimbusds.jose.jwk.JWKSet;
+import com.nimbusds.jose.jwk.RSAKey;
+import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
+import com.nimbusds.jose.jwk.source.JWKSource;
+import com.nimbusds.jose.proc.SecurityContext;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.BeanIds;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.jwt.JwtDecoder;
+import org.springframework.security.oauth2.jwt.JwtEncoder;
+import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
+import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
+import org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationEntryPoint;
+import org.springframework.security.oauth2.server.resource.web.access.BearerTokenAccessDeniedHandler;
 
-import java.util.List;
+import java.security.interfaces.RSAPrivateKey;
+import java.security.interfaces.RSAPublicKey;
 
 @Configuration
-public class SecurityConfig {
+@RequiredArgsConstructor
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
-	@Bean
-	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http.cors(c -> {
-			CorsConfigurationSource source = s -> {
-				CorsConfiguration cc = new CorsConfiguration();
-				cc.setAllowCredentials(true);
-				cc.setAllowedOrigins(List.of("http://127.0.0.1:3000"));
-				cc.setAllowedHeaders(List.of("*"));
-				cc.setAllowedMethods(List.of("*"));
-				return cc;
-			};
-			
-			c.configurationSource(source);
-		});
-		return http.oauth2ResourceServer(
-						j -> j.jwt().jwkSetUri("http://localhost:8080/oauth2/jwks")
-				).authorizeRequests()
-				.anyRequest().authenticated()
-				.and().build();
+	private final UserDetailsService userDetailsService;
+	
+	@Value("${jwt.public.key}")
+	RSAPublicKey publicKey;
+	
+	@Value("${jwt.private.key}")
+	RSAPrivateKey privateKey;
+	
+	@Bean(BeanIds.AUTHENTICATION_MANAGER)
+	@Override
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+		return super.authenticationManagerBean();
 	}
 	
+	@Override
+	public void configure(HttpSecurity httpSecurity) throws Exception {
+		httpSecurity.cors().and()
+				.csrf().disable()
+				.authorizeHttpRequests(authorize -> authorize
+						.antMatchers("/api/v1/auth**")
+						.permitAll()
+						.antMatchers("/v2/api-docs",
+								"/configuration/security",
+								"/webjars/**")
+						.permitAll()
+						.anyRequest()
+						.authenticated())
+				.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
+				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+				.exceptionHandling(exceptions -> exceptions
+						.authenticationEntryPoint(new BearerTokenAuthenticationEntryPoint())
+						.accessDeniedHandler(new BearerTokenAccessDeniedHandler())
+				);
+	}
+	
+	@Override
+	public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
+		authenticationManagerBuilder.userDetailsService(userDetailsService)
+				.passwordEncoder(passwordEncoder());
+	}
+	
+	@Bean
+	PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+	
+	@Bean
+	JwtDecoder jwtDecoder() {
+		return NimbusJwtDecoder.withPublicKey(this.publicKey).build();
+	}
+	
+	@Bean
+	JwtEncoder jwtEncoder() {
+		JWK jwk = new RSAKey.Builder(this.publicKey).privateKey(this.privateKey).build();
+		JWKSource<SecurityContext> jwks = new ImmutableJWKSet<>(new JWKSet(jwk));
+		return new NimbusJwtEncoder(jwks);
+	}
 }
-
-// http://localhost:8080/oauth2/authorize?response_type=code&client_id=client&scope=openid&redirect_uri=http://localhost:3000/authorized&code_challenge=QYPAZ5NU8yvtlQ9erXrUYR-T5AGCjCF47vN-KsaI2A8&code_challenge_method=S256

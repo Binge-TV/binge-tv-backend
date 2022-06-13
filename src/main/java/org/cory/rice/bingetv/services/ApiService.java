@@ -16,9 +16,6 @@ public class ApiService extends OkHttpClient {
 	
 	private static BingeTvConfigProperties bingConfig;
 	
-	
-	
-
 	static OkHttpClient client = null;
 	
 	public ApiService(BingeTvConfigProperties bingConfig) {
@@ -51,8 +48,6 @@ public class ApiService extends OkHttpClient {
 	
 	public static String ApiCallByName(String query) throws IOException {
 		
-		
-		
 		HttpUrl httpByNameUrl = new HttpUrl.Builder()
 				.scheme("http")
 				.host("api.themoviedb.org")
@@ -75,6 +70,4 @@ public class ApiService extends OkHttpClient {
 			return null;
 		}
 	}
-	
-	
 }
