@@ -15,6 +15,7 @@ import org.cory.rice.bingetv.repository.VerificationTokenRepository;
 import org.cory.rice.bingetv.security.JwtProvider;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -43,6 +44,7 @@ public class AuthService {
 	private final AuthenticationManager authenticationManager;
 	private final JwtProvider jwtProvider;
 	private final RefreshTokenService refreshTokenService;
+
 	
 	public void signup(RegisterRequest registerRequest) {
 		User user = new User();
@@ -81,6 +83,7 @@ public class AuthService {
 		VerificationToken verificationToken = new VerificationToken();
 		verificationToken.setToken(token);
 		verificationToken.setUser(user);
+		verificationToken.setExpiryDate(Instant.now().plusSeconds(jwtProvider.getJwtExpirationInMillis()));
 		
 		verificationTokenRepository.save(verificationToken);
 		return token;
@@ -122,4 +125,5 @@ public class AuthService {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		return !(authentication instanceof AnonymousAuthenticationToken) && authentication.isAuthenticated();
 	}
+	
 }

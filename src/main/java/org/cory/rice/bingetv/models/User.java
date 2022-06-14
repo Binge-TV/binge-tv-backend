@@ -34,12 +34,7 @@ public class User {
 	@Email
 	@NotEmpty(message = "Email is required")
 	private String email;
-	
 	private Instant created;
-	@ReadOnlyProperty
-	private Boolean enabled;
+	private boolean enabled;
 	
-	public boolean isEnabled() {
-		return enabled;
-	}
 }
