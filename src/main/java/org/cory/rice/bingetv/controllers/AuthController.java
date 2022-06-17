@@ -1,10 +1,7 @@
 package org.cory.rice.bingetv.controllers;
 
 import lombok.AllArgsConstructor;
-import org.cory.rice.bingetv.dto.AuthenticationResponse;
-import org.cory.rice.bingetv.dto.LoginRequest;
-import org.cory.rice.bingetv.dto.RefreshTokenRequest;
-import org.cory.rice.bingetv.dto.RegisterRequest;
+import org.cory.rice.bingetv.dto.*;
 import org.cory.rice.bingetv.services.AuthService;
 import org.cory.rice.bingetv.services.RefreshTokenService;
 import org.cory.rice.bingetv.services.UserDetailsServiceImpl;
@@ -23,6 +20,7 @@ public class AuthController {
 	private final AuthService authService;
 	private final RefreshTokenService refreshTokenService;
 	private final UserDetailsServiceImpl userDetailsServiceImpl;
+	
 	@PostMapping("/signup")
 	public ResponseEntity<String> signup(@RequestBody RegisterRequest registerRequest) {
 		authService.signup(registerRequest);
@@ -50,7 +48,6 @@ public class AuthController {
 	@PostMapping("/logout")
 	public ResponseEntity<String> logout(@Valid @RequestBody RefreshTokenRequest refreshTokenRequest) {
 		refreshTokenService.deleteRefreshToken(refreshTokenRequest.getRefreshToken());
-		return ResponseEntity.status(OK).body("Refresh Token Deleted Successfully!!");
+		return ResponseEntity.status(OK).body("Refresh Token Deleted Successfully");
 	}
-
 }
