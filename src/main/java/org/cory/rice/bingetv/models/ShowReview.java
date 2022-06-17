@@ -13,11 +13,12 @@ import java.time.Instant;
 @NoArgsConstructor
 @Entity
 public class ShowReview implements Serializable {
-	
-	private String content;
 	@Id
+	private Long reviewId;
+	private String content;
+
 	@ManyToOne(optional = false)
-	@JoinColumn(name = "author_email", nullable = false)
+	@JoinColumn(name = "author_email", nullable = false, unique = true)
 	private User author;
 	private Instant reviewed;
 	
