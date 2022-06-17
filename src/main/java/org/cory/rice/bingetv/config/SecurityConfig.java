@@ -58,6 +58,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 						.antMatchers("/error/**").permitAll()
 						.antMatchers("/api/v1/auth/**")
 						.permitAll()
+						.antMatchers("/api/v1/shows/**")
+						.permitAll()
+						.antMatchers("/api/v1/profiles")
+						.permitAll()
 						.antMatchers("/v2/api-docs",
 								"/configuration/security",
 								"/webjars/**")

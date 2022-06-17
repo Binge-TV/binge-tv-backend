@@ -7,7 +7,9 @@ import org.cory.rice.bingetv.dto.RefreshTokenRequest;
 import org.cory.rice.bingetv.dto.RegisterRequest;
 import org.cory.rice.bingetv.services.AuthService;
 import org.cory.rice.bingetv.services.RefreshTokenService;
+import org.cory.rice.bingetv.services.UserDetailsServiceImpl;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -20,6 +22,7 @@ public class AuthController {
 	
 	private final AuthService authService;
 	private final RefreshTokenService refreshTokenService;
+	private final UserDetailsServiceImpl userDetailsServiceImpl;
 	@PostMapping("/signup")
 	public ResponseEntity<String> signup(@RequestBody RegisterRequest registerRequest) {
 		authService.signup(registerRequest);
@@ -49,4 +52,5 @@ public class AuthController {
 		refreshTokenService.deleteRefreshToken(refreshTokenRequest.getRefreshToken());
 		return ResponseEntity.status(OK).body("Refresh Token Deleted Successfully!!");
 	}
+
 }

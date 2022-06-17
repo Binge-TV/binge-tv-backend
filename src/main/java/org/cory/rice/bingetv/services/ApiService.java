@@ -5,7 +5,7 @@ package org.cory.rice.bingetv.services;
 import okhttp3.*;
 
 import org.cory.rice.bingetv.BingeTvConfigProperties;
-import org.cory.rice.bingetv.models.TvShow;
+import org.cory.rice.bingetv.models.Shows;
 import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.util.List;
