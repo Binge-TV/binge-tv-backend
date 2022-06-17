@@ -1,12 +1,10 @@
 package org.cory.rice.bingetv.controllers;
 
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.cory.rice.bingetv.repository.ShowRepository;
-import org.cory.rice.bingetv.services.ApiService;
+import org.cory.rice.bingetv.services.ShowsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,20 +19,20 @@ public class ShowController {
 	@Autowired
 	private ShowRepository showRepository;
 	
-	private ApiService apiService;
+	private ShowsService showsService;
 	
-	public ShowController(ApiService apiService) {
-		this.apiService = apiService;
+	public ShowController(ShowsService showsService) {
+		this.showsService = showsService;
 	}
 	
 	@PostMapping
 	public String searchShowByName(@RequestBody  String query) throws IOException {
-		return  apiService.ApiCallByName(query);
+		return  showsService.ApiCallByName(query);
 	}
 	
 	@GetMapping("{showId}")
 	public String getShowDetails(@PathVariable String showId) throws IOException {
-		return apiService.ApiCallById(showId);
+		return showsService.ApiCallById(showId);
 	}
 	
 	
