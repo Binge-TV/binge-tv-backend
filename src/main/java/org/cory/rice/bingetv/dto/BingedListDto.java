@@ -6,11 +6,9 @@ import lombok.NoArgsConstructor;
 import org.cory.rice.bingetv.models.Shows;
 import org.cory.rice.bingetv.models.User;
 
-import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
-
-import static javax.persistence.FetchType.LAZY;
 
 @Data
 @AllArgsConstructor
@@ -19,5 +17,5 @@ public class BingedListDto {
 	
 	private Long id;
 	private User owner;
-	Set<Shows> bShows = new HashSet<>();
+	List<Shows> bingedShows;
 }

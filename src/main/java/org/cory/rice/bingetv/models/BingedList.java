@@ -6,8 +6,10 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+import static javax.persistence.CascadeType.ALL;
 import static javax.persistence.FetchType.LAZY;
 
 @Data
@@ -22,10 +24,10 @@ public class BingedList {
 	private Long id;
 
 
-	@OneToOne(fetch = LAZY)
+	@OneToOne(fetch = LAZY, cascade = ALL)
 	private User owner;
 	@ManyToMany(targetEntity = Shows.class)
-	 Set<Shows> bShows = new HashSet<>();
+	List<Shows> bingedShows;
 
 
 

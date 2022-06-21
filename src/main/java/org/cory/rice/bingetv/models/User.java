@@ -16,6 +16,9 @@ import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 
+import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.FetchType.LAZY;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -40,7 +43,17 @@ public class User {
 	private String email;
 	private Instant created;
 	private boolean enabled;
-	@OneToOne
+	@OneToOne(fetch = LAZY, cascade = ALL)
 	private BingedList bingedList;
 	
+	@OneToOne(mappedBy = "user", optional = false, cascade = ALL)
+	private VerificationToken verificationToken;
+	
+	public VerificationToken getVerificationToken() {
+		return verificationToken;
+	}
+	
+	public void setVerificationToken(VerificationToken verificationToken) {
+		this.verificationToken = verificationToken;
+	}
 }

@@ -11,9 +11,8 @@ public class UserDto {
 	
 	private Long userId;
 	private String username;
-	private String password;
 	private String email;
-	private Instant created;
-	private boolean enabled;
 	private BingedList bingedList;
+	private Instant created;
+	private String password;
 }
