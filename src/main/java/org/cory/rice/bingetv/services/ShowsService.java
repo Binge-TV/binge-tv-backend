@@ -5,20 +5,18 @@ package org.cory.rice.bingetv.services;
 import okhttp3.*;
 
 import org.cory.rice.bingetv.BingeTvConfigProperties;
-import org.cory.rice.bingetv.models.Shows;
 import org.springframework.stereotype.Service;
 import java.io.IOException;
-import java.util.List;
 
 
 @Service
-public class ApiService extends OkHttpClient {
+public class ShowsService extends OkHttpClient {
 	
 	private static BingeTvConfigProperties bingConfig;
 	
 	static OkHttpClient client = null;
 	
-	public ApiService(BingeTvConfigProperties bingConfig) {
+	public ShowsService(BingeTvConfigProperties bingConfig) {
 		this.bingConfig = bingConfig;
 	}
 	

@@ -1,17 +1,20 @@
 package org.cory.rice.bingetv.controllers;
 
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.cory.rice.bingetv.dto.ShowsDto;
 import org.cory.rice.bingetv.dto.UserDto;
 import org.cory.rice.bingetv.mappers.BingeListMapper;
 import org.cory.rice.bingetv.models.Shows;
 import org.cory.rice.bingetv.repository.ShowRepository;
+<<<<<<< HEAD
 import org.cory.rice.bingetv.services.ApiService;
 import org.cory.rice.bingetv.services.ShowService;
+=======
+import org.cory.rice.bingetv.services.ApiService;
+import org.cory.rice.bingetv.services.ShowService;
+>>>>>>> BingedList
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,6 +35,17 @@ public class ShowController {
 	
 	@Autowired
 	private ShowRepository showRepository;
+<<<<<<< HEAD
+	@Autowired
+	private ShowService showService;
+	private ApiService apiService;
+	
+	private BingeListMapper bingeListMapper;
+	
+	public ShowController(ApiService apiService, ShowService showService) {
+		this.apiService = apiService;
+		this.showService = showService;
+=======
 	@Autowired
 	private ShowService showService;
 	private ApiService apiService;
@@ -41,16 +55,17 @@ public class ShowController {
 	public ShowController(ApiService apiService, ShowService showService) {
 		this.apiService = apiService;
 		this.showService = showService;
+>>>>>>> BingedList
 	}
 	
 	@PostMapping
 	public String searchShowByName(@RequestBody  String query) throws IOException {
-		return  apiService.ApiCallByName(query);
+		return  showsService.ApiCallByName(query);
 	}
 	
 	@GetMapping("{showId}")
 	public String getShowDetails(@PathVariable String showId) throws IOException {
-		return apiService.ApiCallById(showId);
+		return showsService.ApiCallById(showId);
 	}
 	
 	@GetMapping("/index")
