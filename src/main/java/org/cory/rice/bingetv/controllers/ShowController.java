@@ -1,6 +1,7 @@
 package org.cory.rice.bingetv.controllers;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.cory.rice.bingetv.dto.ShowsDto;
@@ -8,13 +9,13 @@ import org.cory.rice.bingetv.dto.UserDto;
 import org.cory.rice.bingetv.mappers.BingeListMapper;
 import org.cory.rice.bingetv.models.Shows;
 import org.cory.rice.bingetv.repository.ShowRepository;
-<<<<<<< HEAD
+
 import org.cory.rice.bingetv.services.ApiService;
 import org.cory.rice.bingetv.services.ShowService;
-=======
+
 import org.cory.rice.bingetv.services.ApiService;
 import org.cory.rice.bingetv.services.ShowService;
->>>>>>> BingedList
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -35,37 +36,37 @@ public class ShowController {
 	
 	@Autowired
 	private ShowRepository showRepository;
-<<<<<<< HEAD
-	@Autowired
-	private ShowService showService;
-	private ApiService apiService;
-	
-	private BingeListMapper bingeListMapper;
-	
-	public ShowController(ApiService apiService, ShowService showService) {
-		this.apiService = apiService;
-		this.showService = showService;
-=======
-	@Autowired
-	private ShowService showService;
-	private ApiService apiService;
 
+	@Autowired
+	private ShowService showService;
+	private ApiService apiService;
+	
 	private BingeListMapper bingeListMapper;
+	
+//	public ShowController(ApiService apiService, ShowService showService) {
+//		this.apiService = apiService;
+//		this.showService = showService;
+//	}
+//	@Autowired
+//	private ShowService showService;
+//	private ApiService apiService;
+//
+//	private BingeListMapper bingeListMapper;
 	
 	public ShowController(ApiService apiService, ShowService showService) {
 		this.apiService = apiService;
 		this.showService = showService;
->>>>>>> BingedList
+
 	}
 	
 	@PostMapping
 	public String searchShowByName(@RequestBody  String query) throws IOException {
-		return  showsService.ApiCallByName(query);
+		return  apiService.ApiCallByName(query);
 	}
 	
 	@GetMapping("{showId}")
 	public String getShowDetails(@PathVariable String showId) throws IOException {
-		return showsService.ApiCallById(showId);
+		return apiService.ApiCallById(showId);
 	}
 	
 	@GetMapping("/index")
@@ -84,9 +85,5 @@ public class ShowController {
 	public ResponseEntity<ShowsDto> getSavedShowById(@PathVariable Long showId) {
 		return status(OK).body(showService.getShowById(showId));
 	}
-	
-	
-	
-	
 	
 }

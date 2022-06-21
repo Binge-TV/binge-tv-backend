@@ -10,13 +10,13 @@ import java.io.IOException;
 
 
 @Service
-public class ShowsService extends OkHttpClient {
+public class ApiService extends OkHttpClient {
 	
 	private static BingeTvConfigProperties bingConfig;
 	
 	static OkHttpClient client = null;
 	
-	public ShowsService(BingeTvConfigProperties bingConfig) {
+	public ApiService(BingeTvConfigProperties bingConfig) {
 		this.bingConfig = bingConfig;
 	}
 	

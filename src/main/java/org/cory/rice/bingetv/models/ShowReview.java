@@ -18,15 +18,9 @@ public class ShowReview implements Serializable {
 	@Id
 	private Long reviewId;
 	private String content;
-
-<<<<<<< HEAD
-	@ManyToOne(optional = false)
-=======
+	
 	@ManyToOne(optional = false, cascade = ALL)
->>>>>>> BingedList
 	@JoinColumn(name = "author_email", nullable = false, unique = true)
 	private User author;
 	private Instant reviewedTime;
-	
-	
 }
