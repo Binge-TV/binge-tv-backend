@@ -27,7 +27,7 @@ public class BingedList {
 	@OneToOne(fetch = LAZY, cascade = ALL)
 	private User owner;
 	@ManyToMany(targetEntity = Shows.class)
-	List<Shows> bingedShows;
+	Set<Shows> bingedShows;
 
 
 
