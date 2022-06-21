@@ -33,5 +33,9 @@ build/
 
 ### app .env ###
 secrets.properties
+
+
+=======
 app.pub
 app.key
+
