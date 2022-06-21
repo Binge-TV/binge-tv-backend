@@ -8,6 +8,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
 
+import static javax.persistence.CascadeType.ALL;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,10 +19,10 @@ public class ShowReview implements Serializable {
 	private Long reviewId;
 	private String content;
 
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = false, cascade = ALL)
 	@JoinColumn(name = "author_email", nullable = false, unique = true)
 	private User author;
-	private Instant reviewed;
+	private Instant reviewedTime;
 	
 	
 }

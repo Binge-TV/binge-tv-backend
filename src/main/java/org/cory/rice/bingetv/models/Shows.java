@@ -2,6 +2,9 @@ package org.cory.rice.bingetv.models;
 
 import lombok.*;
 import javax.persistence.*;
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
 
 
 @Data
@@ -12,10 +15,12 @@ public class Shows {
 	
 
 	@Id
-	private Integer showId;
+	private Long showId;
 	
 	@Column
 	private String showName;
 	
 	
+	@ManyToMany(mappedBy = "bingedShows")
+	private Collection<BingedList> bingedLists;
 }
