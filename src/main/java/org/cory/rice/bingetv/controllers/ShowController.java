@@ -9,7 +9,8 @@ import org.cory.rice.bingetv.mappers.BingeListMapper;
 import org.cory.rice.bingetv.models.Shows;
 import org.cory.rice.bingetv.repository.ShowRepository;
 <<<<<<< HEAD
-import org.cory.rice.bingetv.services.ShowsService;
+import org.cory.rice.bingetv.services.ApiService;
+import org.cory.rice.bingetv.services.ShowService;
 =======
 import org.cory.rice.bingetv.services.ApiService;
 import org.cory.rice.bingetv.services.ShowService;
@@ -35,11 +36,15 @@ public class ShowController {
 	@Autowired
 	private ShowRepository showRepository;
 <<<<<<< HEAD
+	@Autowired
+	private ShowService showService;
+	private ApiService apiService;
 	
-	private ShowsService showsService;
+	private BingeListMapper bingeListMapper;
 	
-	public ShowController(ShowsService showsService) {
-		this.showsService = showsService;
+	public ShowController(ApiService apiService, ShowService showService) {
+		this.apiService = apiService;
+		this.showService = showService;
 =======
 	@Autowired
 	private ShowService showService;
