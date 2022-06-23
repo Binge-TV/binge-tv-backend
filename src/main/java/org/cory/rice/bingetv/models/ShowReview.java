@@ -20,7 +20,7 @@ public class ShowReview implements Serializable {
 	private String content;
 	
 	@ManyToOne(optional = false, cascade = ALL)
-	@JoinColumn(name = "author_email", nullable = false, unique = true)
+//	@JoinColumn(name = "author_email", nullable = false, unique = true)
 	private User author;
 	private Instant reviewedTime;
 }
