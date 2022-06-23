@@ -43,12 +43,11 @@ public class User {
 	private String email;
 	private Instant created;
 	private boolean enabled;
-	@OneToOne(fetch = LAZY, cascade = ALL)
-	private BingedList bingedList;
-	
+	private String bio;
+	@OneToMany(targetEntity = Shows.class)
+	private Set<Shows> bingedList;
 	@OneToOne(mappedBy = "user", optional = false, cascade = ALL)
 	private VerificationToken verificationToken;
-	
 	public VerificationToken getVerificationToken() {
 		return verificationToken;
 	}

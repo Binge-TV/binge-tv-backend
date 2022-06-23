@@ -2,19 +2,15 @@ package org.cory.rice.bingetv.controllers;
 
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+
 import lombok.RequiredArgsConstructor;
 import org.cory.rice.bingetv.dto.ShowsDto;
-import org.cory.rice.bingetv.dto.UserDto;
-import org.cory.rice.bingetv.mappers.BingeListMapper;
-import org.cory.rice.bingetv.models.Shows;
+
 import org.cory.rice.bingetv.repository.ShowRepository;
 
 import org.cory.rice.bingetv.services.ApiService;
 import org.cory.rice.bingetv.services.ShowService;
 
-import org.cory.rice.bingetv.services.ApiService;
-import org.cory.rice.bingetv.services.ShowService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -41,7 +37,7 @@ public class ShowController {
 	private ShowService showService;
 	private ApiService apiService;
 	
-	private BingeListMapper bingeListMapper;
+
 	
 //	public ShowController(ApiService apiService, ShowService showService) {
 //		this.apiService = apiService;
@@ -51,7 +47,7 @@ public class ShowController {
 //	private ShowService showService;
 //	private ApiService apiService;
 //
-//	private BingeListMapper bingeListMapper;
+
 	
 	public ShowController(ApiService apiService, ShowService showService) {
 		this.apiService = apiService;
