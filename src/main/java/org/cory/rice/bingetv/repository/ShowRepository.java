@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface ShowRepository extends JpaRepository<Shows,  Long>{
-//	Optional<Shows> findByName(String showName);
+	Optional<Shows> findByShowName(String showName);
 }

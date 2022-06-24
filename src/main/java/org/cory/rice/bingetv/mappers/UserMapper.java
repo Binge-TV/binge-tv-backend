@@ -5,10 +5,10 @@ import org.cory.rice.bingetv.dto.UserDto;
 import org.cory.rice.bingetv.models.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = ShowMapper.class)
 public interface UserMapper {
 	
-	org.cory.rice.bingetv.mappers.ShowMapper INSTANCE= Mappers.getMapper(ShowMapper.class);
+	UserMapper INSTANCE= Mappers.getMapper(UserMapper.class);
 	UserDto modelToDto(User user);
 	User dtoToModel(UserDto userDto);
 }

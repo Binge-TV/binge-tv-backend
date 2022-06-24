@@ -6,12 +6,15 @@ import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.cory.rice.bingetv.dto.ShowsDto;
 
+import org.cory.rice.bingetv.models.Shows;
+import org.cory.rice.bingetv.models.User;
 import org.cory.rice.bingetv.repository.ShowRepository;
 
 import org.cory.rice.bingetv.services.ApiService;
 import org.cory.rice.bingetv.services.ShowService;
 
 
+import org.cory.rice.bingetv.services.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,7 +39,8 @@ public class ShowController {
 	@Autowired
 	private ShowService showService;
 	private ApiService apiService;
-	
+	@Autowired
+	private UserDetailsServiceImpl userDetailsService;
 
 	
 //	public ShowController(ApiService apiService, ShowService showService) {
@@ -71,11 +75,20 @@ public class ShowController {
 	}
 	
 	@PostMapping("{showId}/add")
-	public ResponseEntity<Void> createShow(@RequestBody ShowsDto showsDto) {
-		showService.saveShow(showsDto);
-		
+	public ResponseEntity<Void> createShow(@RequestBody Shows shows) {
+	//	System.out.println("SHOWS " +shows + " USER " +username);
+	//	System.out.println(userDetailsService.loadUserByUsername(username).toString());
+		showService.saveShow(shows);
+
 		return new ResponseEntity<>(CREATED);
 	}
+	
+//	@PostMapping("{showId}/add")
+//	public ResponseEntity<Void> createShow(@PathVariable("showId") Long showId) {
+//    showService.saveShow();
+//
+//		return new ResponseEntity<>(CREATED);
+//	}
 	
 	@GetMapping("/add/{showId}")
 	public ResponseEntity<ShowsDto> getSavedShowById(@PathVariable Long showId) {

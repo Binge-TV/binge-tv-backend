@@ -3,9 +3,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import org.cory.rice.bingetv.models.Shows;
 
-import javax.persistence.OneToMany;
+
+
 import java.time.Instant;
 import java.util.Set;
 
@@ -18,7 +18,7 @@ public class UserDto {
 	private String username;
 	private String email;
 	private String bio;
-	private Set<Shows> bingedList;
+	private Set<ShowsDto> bingedList;
 	private Instant created;
 	private String password;
 }

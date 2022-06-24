@@ -1,10 +1,7 @@
 package org.cory.rice.bingetv.services;
 
 import lombok.AllArgsConstructor;
-import org.cory.rice.bingetv.dto.AuthenticationResponse;
-import org.cory.rice.bingetv.dto.LoginRequest;
-import org.cory.rice.bingetv.dto.RefreshTokenRequest;
-import org.cory.rice.bingetv.dto.RegisterRequest;
+import org.cory.rice.bingetv.dto.*;
 import org.cory.rice.bingetv.exceptions.BingeTvException;
 import org.cory.rice.bingetv.models.NotificationEmail;
 
@@ -16,11 +13,13 @@ import org.cory.rice.bingetv.security.JwtProvider;
 
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.jwt.Jwt;
@@ -36,7 +35,7 @@ import java.util.UUID;
 public class AuthService {
 	
 	
-	
+	private final UserDetailsServiceImpl userDetailsService;
 	private final PasswordEncoder passwordEncoder;
 	private final UserRepository userRepository;
 	private final VerificationTokenRepository verificationTokenRepository;
@@ -65,10 +64,21 @@ public class AuthService {
 	
 	@Transactional(readOnly = true)
 	public User getCurrentUser() {
-		Jwt principal = (Jwt) SecurityContextHolder.
+		Object principal =  SecurityContextHolder.
 				getContext().getAuthentication().getPrincipal();
-		return userRepository.findByUsername(principal.getSubject())
-				.orElseThrow(() -> new UsernameNotFoundException("User name not found - " + principal.getSubject()));
+		String username = null;
+		if (principal != null) {
+			System.out.println("PRINCE " + principal);
+		}
+//		if (principal instanceof UserDetails) {
+//			 username = ((UserDetails)principal).getUsername();
+//		} else {
+//			username = principal.toString();
+//		}
+		
+		System.out.println(username);
+		return userRepository.findByUsername(username)
+				.orElseThrow(() -> new UsernameNotFoundException("User name not found - " ));
 	}
 	
 	private void fetchUserAndEnable(VerificationToken verificationToken) {
@@ -106,6 +116,7 @@ public class AuthService {
 				.refreshToken(refreshTokenService.generateRefreshToken().getToken())
 				.expiresAt(Instant.now().plusMillis(jwtProvider.getJwtExpirationInMillis()))
 				.username(loginRequest.getUsername())
+//				.userId(userDto.getUserId())
 				.build();
 	}
 	
@@ -117,6 +128,7 @@ public class AuthService {
 				.refreshToken(refreshTokenRequest.getRefreshToken())
 				.expiresAt(Instant.now().plusMillis(jwtProvider.getJwtExpirationInMillis()))
 				.username(refreshTokenRequest.getUsername())
+				
 				.build();
 	}
 	

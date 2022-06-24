@@ -9,7 +9,7 @@ import org.mapstruct.factory.Mappers;
 public interface ShowMapper {
 
 		
-		org.cory.rice.bingetv.mappers.ShowMapper INSTANCE= Mappers.getMapper(ShowMapper.class);
+		ShowMapper INSTANCE= Mappers.getMapper(ShowMapper.class);
 		ShowsDto modelToDto(Shows shows);
 		Shows dtoToModel(ShowsDto showsDto);
 		

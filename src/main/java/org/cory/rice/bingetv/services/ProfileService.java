@@ -63,4 +63,8 @@ public class ProfileService {
 		
 		userRepository.delete(deletedUser);
 	}
+	
+//	public User findUserByUserName(String username) {
+//		this.getAllUsers()
+//	}
 }

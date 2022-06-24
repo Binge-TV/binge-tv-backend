@@ -1,9 +1,8 @@
 package org.cory.rice.bingetv.models;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.*;
 import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.data.annotation.ReadOnlyProperty;
 
@@ -14,12 +13,14 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.time.Instant;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import static javax.persistence.CascadeType.ALL;
 import static javax.persistence.FetchType.LAZY;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -44,15 +45,14 @@ public class User {
 	private Instant created;
 	private boolean enabled;
 	private String bio;
-	@OneToMany(targetEntity = Shows.class)
-	private Set<Shows> bingedList;
-	@OneToOne(mappedBy = "user", optional = false, cascade = ALL)
-	private VerificationToken verificationToken;
-	public VerificationToken getVerificationToken() {
-		return verificationToken;
-	}
+	@JsonManagedReference
+	@OneToMany(targetEntity = Shows.class, cascade = ALL, fetch = LAZY,
+	mappedBy = "users")
+	private Set<Shows> bingedList = new LinkedHashSet<Shows>();
 	
-	public void setVerificationToken(VerificationToken verificationToken) {
-		this.verificationToken = verificationToken;
+	
+	public User(String username) {
+		this.username = username;
+		this.userId = getUserId();
 	}
 }
