@@ -5,12 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.cory.rice.bingetv.models.User;
 
+import java.io.Serializable;
+
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ShowsDto {
-	
+public class ShowsDto implements Serializable {
+	private Long id;
 	private Long showId;
 	private String showName;
 	private User users;

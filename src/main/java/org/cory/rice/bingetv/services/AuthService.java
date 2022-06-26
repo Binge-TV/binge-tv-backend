@@ -1,5 +1,6 @@
 package org.cory.rice.bingetv.services;
 
+import com.nimbusds.jwt.JWT;
 import lombok.AllArgsConstructor;
 import org.cory.rice.bingetv.dto.*;
 import org.cory.rice.bingetv.exceptions.BingeTvException;
@@ -64,26 +65,17 @@ public class AuthService {
 	
 	@Transactional(readOnly = true)
 	public User getCurrentUser() {
-		Object principal =  SecurityContextHolder.
+		Jwt principal = (Jwt) SecurityContextHolder.
 				getContext().getAuthentication().getPrincipal();
-		String username = null;
-		if (principal != null) {
-			System.out.println("PRINCE " + principal);
-		}
-//		if (principal instanceof UserDetails) {
-//			 username = ((UserDetails)principal).getUsername();
-//		} else {
-//			username = principal.toString();
-//		}
 		
-		System.out.println(username);
-		return userRepository.findByUsername(username)
+		return userRepository.findByUsername(principal.getSubject())
 				.orElseThrow(() -> new UsernameNotFoundException("User name not found - " ));
 	}
 	
 	private void fetchUserAndEnable(VerificationToken verificationToken) {
 		String username = verificationToken.getUser().getUsername();
-		User user = userRepository.findByUsername(username).orElseThrow(() -> new BingeTvException("User not found with name - " + username));
+		User user = userRepository.findByUsername(username)
+				.orElseThrow(() -> new BingeTvException("User not found with name - " + username));
 		user.setEnabled(true);
 		userRepository.save(user);
 	}
@@ -107,7 +99,8 @@ public class AuthService {
 	
 	
 	public AuthenticationResponse login(LoginRequest loginRequest) {
-		Authentication authenticate = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(),
+		Authentication authenticate = authenticationManager.authenticate
+				(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(),
 				loginRequest.getPassword()));
 		SecurityContextHolder.getContext().setAuthentication(authenticate);
 		String token = jwtProvider.generateToken(authenticate);
@@ -116,7 +109,6 @@ public class AuthService {
 				.refreshToken(refreshTokenService.generateRefreshToken().getToken())
 				.expiresAt(Instant.now().plusMillis(jwtProvider.getJwtExpirationInMillis()))
 				.username(loginRequest.getUsername())
-//				.userId(userDto.getUserId())
 				.build();
 	}
 	
@@ -128,7 +120,6 @@ public class AuthService {
 				.refreshToken(refreshTokenRequest.getRefreshToken())
 				.expiresAt(Instant.now().plusMillis(jwtProvider.getJwtExpirationInMillis()))
 				.username(refreshTokenRequest.getUsername())
-				
 				.build();
 	}
 	

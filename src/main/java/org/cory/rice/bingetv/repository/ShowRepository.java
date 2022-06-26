@@ -9,4 +9,5 @@ import java.util.Optional;
 @Repository
 public interface ShowRepository extends JpaRepository<Shows,  Long>{
 	Optional<Shows> findByShowName(String showName);
+	Optional<Shows> findByShowId(Long showId);
 }

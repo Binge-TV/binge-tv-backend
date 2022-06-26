@@ -30,7 +30,7 @@ public class ProfileController {
 	private UserRepository userRepository;
 	
 	@GetMapping
-	public ResponseEntity<List<UserDto>> getAllShows() {
+	public ResponseEntity<List<UserDto>> getAllUserProfiles() {
 		return status(OK).body(profileService.getAllUsers());
 	}
 	

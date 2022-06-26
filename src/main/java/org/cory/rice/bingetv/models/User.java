@@ -1,6 +1,7 @@
 package org.cory.rice.bingetv.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import org.hibernate.validator.constraints.UniqueElements;
@@ -23,6 +24,7 @@ import static javax.persistence.FetchType.LAZY;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
 @Entity
 public class User {
 	
@@ -44,9 +46,9 @@ public class User {
 	private String email;
 	private Instant created;
 	private boolean enabled;
-	private String bio;
+	private String bio = "User has not set up a profile bio";
 	@JsonManagedReference
-	@OneToMany(targetEntity = Shows.class, cascade = ALL, fetch = LAZY,
+	@OneToMany(targetEntity = Shows.class, cascade = ALL,
 	mappedBy = "users")
 	private Set<Shows> bingedList = new LinkedHashSet<Shows>();
 	

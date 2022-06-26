@@ -10,7 +10,9 @@ import org.cory.rice.bingetv.exceptions.BingeTvException;
 import org.cory.rice.bingetv.mappers.UserMapper;
 import org.cory.rice.bingetv.models.Shows;
 import org.cory.rice.bingetv.models.User;
+import org.cory.rice.bingetv.models.VerificationToken;
 import org.cory.rice.bingetv.repository.UserRepository;
+import org.cory.rice.bingetv.repository.VerificationTokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -31,6 +33,8 @@ public class ProfileService {
 	UserRepository userRepository;
 	@Autowired
 	UserMapper userMapper;
+	@Autowired
+	VerificationTokenRepository vTokenRepo;
 	
 	public List<UserDto> getAllUsers() {
 		return userRepository.findAll().stream()
@@ -52,6 +56,7 @@ public class ProfileService {
 						+ userId));
 		String encoded = new BCryptPasswordEncoder().encode(userDetails.getPassword());
 		updatedUser.setPassword(encoded);
+		updatedUser.setBio(userDetails.getBio());
 		
 		return  userRepository.save(updatedUser);
 	}
@@ -60,11 +65,9 @@ public class ProfileService {
 		User deletedUser = userRepository.findById(userId)
 				.orElseThrow(() -> new BingeTvException("No Users found with ID : "
 						+ userId));
-		
+		var removedToken = vTokenRepo.findByUser(deletedUser);
+		vTokenRepo.delete(removedToken.get());
 		userRepository.delete(deletedUser);
 	}
-	
-//	public User findUserByUserName(String username) {
-//		this.getAllUsers()
-//	}
+
 }

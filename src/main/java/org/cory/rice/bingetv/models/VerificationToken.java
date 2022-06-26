@@ -22,6 +22,6 @@ public class VerificationToken {
 	@GeneratedValue(strategy = IDENTITY)
 	private Long id;
 	private String token;
-	@OneToOne(fetch = LAZY, cascade = ALL)
+	@OneToOne(fetch = LAZY, cascade = ALL, orphanRemoval = true)
 	private User user;
 }

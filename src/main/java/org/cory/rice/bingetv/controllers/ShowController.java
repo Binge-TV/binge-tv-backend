@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.cory.rice.bingetv.dto.ShowsDto;
 
+import org.cory.rice.bingetv.exceptions.BingeTvException;
 import org.cory.rice.bingetv.models.Shows;
 import org.cory.rice.bingetv.models.User;
 import org.cory.rice.bingetv.repository.ShowRepository;
@@ -16,6 +17,7 @@ import org.cory.rice.bingetv.services.ShowService;
 
 import org.cory.rice.bingetv.services.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -76,19 +78,17 @@ public class ShowController {
 	
 	@PostMapping("{showId}/add")
 	public ResponseEntity<Void> createShow(@RequestBody Shows shows) {
-	//	System.out.println("SHOWS " +shows + " USER " +username);
-	//	System.out.println(userDetailsService.loadUserByUsername(username).toString());
-		showService.saveShow(shows);
-
-		return new ResponseEntity<>(CREATED);
+//		Shows checkUser = showRepository.findByShowId(shows.getShowId()).get();
+//		String username = shows.getUsers().getUsername();
+//		System.out.println("CHECKUSER " + checkUser + " USERNAME " + username);
+//		if (!checkUser.getUsers().getUsername().contains(username)) {
+			
+			
+			showService.saveShow(shows);
+			return new ResponseEntity<>(CREATED);
+//		}
+//		return new ResponseEntity<>(HttpStatus.IM_USED);
 	}
-	
-//	@PostMapping("{showId}/add")
-//	public ResponseEntity<Void> createShow(@PathVariable("showId") Long showId) {
-//    showService.saveShow();
-//
-//		return new ResponseEntity<>(CREATED);
-//	}
 	
 	@GetMapping("/add/{showId}")
 	public ResponseEntity<ShowsDto> getSavedShowById(@PathVariable Long showId) {

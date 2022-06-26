@@ -14,8 +14,12 @@ import static javax.persistence.FetchType.LAZY;
 @Entity(name = "Shows")
 public class Shows {
 	
-
+	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
+	private Long id;
+	@Column
 	private Long showId;
 	@Column
 	private String showName;
