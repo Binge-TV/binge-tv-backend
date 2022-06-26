@@ -54,10 +54,13 @@ public class ProfileService {
 		User updatedUser = userRepository.findById(userId)
 				.orElseThrow(() -> new BingeTvException("No Users found with ID : "
 						+ userId));
-		String encoded = new BCryptPasswordEncoder().encode(userDetails.getPassword());
-		updatedUser.setPassword(encoded);
-		updatedUser.setBio(userDetails.getBio());
-		
+		if (userDetails.getPassword() != null || userDetails.getPassword() != "") {
+			String encoded = new BCryptPasswordEncoder().encode(userDetails.getPassword());
+			System.out.println(updatedUser.getPassword());
+		}
+		if (userDetails.getBio() != null || userDetails.getBio() != "") {
+			updatedUser.setBio(userDetails.getBio());
+		}
 		return  userRepository.save(updatedUser);
 	}
 	
