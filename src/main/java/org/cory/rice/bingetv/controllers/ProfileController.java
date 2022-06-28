@@ -9,7 +9,6 @@ import org.cory.rice.bingetv.services.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,10 +23,9 @@ import static org.springframework.http.ResponseEntity.status;
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class ProfileController {
+//	endpoints for all Profile related
 	@Autowired
 	private ProfileService profileService;
-	@Autowired
-	private UserRepository userRepository;
 	
 	@GetMapping
 	public ResponseEntity<List<UserDto>> getAllUserProfiles() {
@@ -40,9 +38,8 @@ public class ProfileController {
 	}
 	
 	@PatchMapping("{userId}")
-	public  ResponseEntity<User> updateUserProfile(@PathVariable Long userId, @RequestBody User userDetails) {
-		profileService.updateUser(userId ,userDetails);
-		
+	public ResponseEntity<User> updateUserProfile(@PathVariable Long userId, @RequestBody User userDetails) {
+		profileService.updateUser(userId, userDetails);
 		return ResponseEntity.ok(userDetails);
 	}
 	

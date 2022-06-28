@@ -115,10 +115,14 @@
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+        </dependency>
     </dependencies>
     <build>
 
-            <testSourceDirectory>src/test/java/</testSourceDirectory>
+        <testSourceDirectory>src/test/java/</testSourceDirectory>
 
         <plugins>
             <plugin>

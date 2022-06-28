@@ -7,10 +7,12 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring")
 public interface ShowMapper {
-
-		
-		ShowMapper INSTANCE= Mappers.getMapper(ShowMapper.class);
-		ShowsDto modelToDto(Shows shows);
-		Shows dtoToModel(ShowsDto showsDto);
-		
-	}
+	
+//	handles mapping models to dto to lessen code with MapStruct
+	ShowMapper INSTANCE = Mappers.getMapper(ShowMapper.class);
+	
+	ShowsDto modelToDto(Shows shows);
+	
+	Shows dtoToModel(ShowsDto showsDto);
+	
+}

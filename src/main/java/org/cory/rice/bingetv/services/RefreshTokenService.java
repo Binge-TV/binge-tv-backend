@@ -1,9 +1,9 @@
 package org.cory.rice.bingetv.services;
+
+import lombok.AllArgsConstructor;
 import org.cory.rice.bingetv.exceptions.BingeTvException;
 import org.cory.rice.bingetv.models.RefreshToken;
 import org.cory.rice.bingetv.repository.RefreshTokenRepository;
-
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,11 +21,10 @@ public class RefreshTokenService {
 		RefreshToken refreshToken = new RefreshToken();
 		refreshToken.setToken(UUID.randomUUID().toString());
 		refreshToken.setCreatedDate(Instant.now());
-		
-		return refreshTokenRepository.save(refreshToken);
+		return refreshTokenRepository.save(refreshToken);//creates and saves refresh token
 	}
 	
-	void validateRefreshToken(String token) {
+	void validateRefreshToken(String token) {//checks if token exists
 		refreshTokenRepository.findByToken(token)
 				.orElseThrow(() -> new BingeTvException("Invalid refresh Token"));
 	}

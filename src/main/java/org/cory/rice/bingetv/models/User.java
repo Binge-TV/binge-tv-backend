@@ -3,22 +3,20 @@ package org.cory.rice.bingetv.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.*;
-import org.hibernate.validator.constraints.UniqueElements;
-import org.springframework.data.annotation.ReadOnlyProperty;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
 import java.time.Instant;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 import static javax.persistence.CascadeType.ALL;
-import static javax.persistence.FetchType.LAZY;
 
 @Getter
 @Setter
@@ -39,7 +37,7 @@ public class User {
 	
 	@NotBlank(message = "Password is required")
 	private String password;
-
+	
 	@Email
 	@Column(unique = true)
 	@NotEmpty(message = "Email is required")
@@ -49,7 +47,7 @@ public class User {
 	private String bio = "User has not set up a profile bio";
 	@JsonManagedReference
 	@OneToMany(targetEntity = Shows.class, cascade = ALL,
-	mappedBy = "users")
+			mappedBy = "users")
 	private Set<Shows> bingedList = new LinkedHashSet<Shows>();
 	
 	

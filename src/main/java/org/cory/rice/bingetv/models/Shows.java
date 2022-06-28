@@ -1,7 +1,11 @@
 package org.cory.rice.bingetv.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 import static javax.persistence.CascadeType.ALL;
@@ -25,7 +29,7 @@ public class Shows {
 	private String showName;
 	
 	@JsonBackReference
-	@ManyToOne(targetEntity =User.class, fetch = LAZY, cascade = ALL)
+	@ManyToOne(targetEntity = User.class, fetch = LAZY, cascade = ALL)
 	@JoinColumn(name = "users_user_id")
 	private User users;
 	

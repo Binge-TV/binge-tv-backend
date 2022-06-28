@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RegisterRequest {
+//	handles params for sign up
 	private String email;
 	private String username;
 	private String password;

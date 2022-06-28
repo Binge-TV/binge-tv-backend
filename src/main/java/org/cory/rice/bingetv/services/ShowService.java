@@ -15,8 +15,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
-
 
 import static java.util.stream.Collectors.toList;
 
@@ -27,7 +25,7 @@ import static java.util.stream.Collectors.toList;
 @Slf4j
 public class ShowService {
 	@Autowired
-	private  ShowRepository showRepository;
+	private ShowRepository showRepository;
 	@Autowired
 	UserDetailsServiceImpl userDetailsService;
 	@Autowired
@@ -36,47 +34,33 @@ public class ShowService {
 	private UserRepository userRepository;
 	
 	public Object saveShow(Shows shows) {
-		String username = shows.getUsers().getUsername();
-		Long showsId = shows.getShowId();
-		User userRepo = userRepository.findByUsername(username).orElseThrow();
-		System.out.println("USER " + shows.getShowName() + userRepo.getUserId());
-		//System.out.print("CHECKUSER " + showsRepo);
-//		if (showsRepo == shows.getShowId() ) {
-//			return null;//new BingeTvException(username + " already has this show in their collection.");
-//		}
-			
-//
-			shows.setUsers(userRepo);
-			Shows savedShow = showRepository.save(shows);
-		System.out.println(savedShow);
-			return savedShow;
+		String username = shows.getUsers().getUsername(); //gets username from show
+		User userRepo = userRepository.findByUsername(username).orElseThrow(); //finds user by username
+		shows.setUsers(userRepo); //sets current user into show
+		Shows savedShow = showRepository.save(shows); //saves show
+		return savedShow;
 		
 	}
-		
-
-		
-		
 	
-	public List<ShowsDto> getAllShows() {
+	
+	public List<ShowsDto> getAllShows() { //returns list of all shows using mapper
 		return showRepository.findAll().stream()
 				.map(showMapper::modelToDto)
 				.collect(toList());
 	}
 	
-	public ShowsDto getShowById(Long showId) {
+	public ShowsDto getShowById(Long showId) { //returns a list of all shows
 		Shows shows = showRepository.findByShowId(showId)
 				.orElseThrow(() -> new BingeTvException("No Shows found with ID : "
 						+ showId));
-		
 		return showMapper.modelToDto(shows);
 	}
 	
-	public void deleteShow(Long showId) {
-		Shows shows = showRepository.findById(showId)
+	public void deleteShow(Long Id) { //delete show by id
+		Shows shows = showRepository.findById(Id)
 				.orElseThrow(() ->
 						new BingeTvException("No Shows found with ID : "
-								+ showId));
-		
+								+ Id));
 		showRepository.delete(shows);
 	}
 }

@@ -10,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -33,6 +32,9 @@ import java.security.interfaces.RSAPublicKey;
 
 @Configuration
 @RequiredArgsConstructor
+/*Security configuration class that sets up JWT authorization for the website utilizing the userServiceDetails Service layer.
+ * All users who are signed up have access to the api rest controller points and users who are not do not.
+ */
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	private final UserDetailsService userDetailsService;
@@ -54,13 +56,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		httpSecurity.cors().and()
 				.csrf().disable()
 				.authorizeHttpRequests(authorize -> authorize
-						.antMatchers("/error").permitAll()
-						.antMatchers("/error/**").permitAll()
+						.antMatchers("/error")
+						.permitAll()
+						.antMatchers("/error/**")
+						.permitAll()
 						.antMatchers("/api/v1/auth/**")
 						.permitAll()
 						.antMatchers("/api/v1/shows/**/**")
 						.permitAll()
-						
 						.antMatchers("/api/v1/profiles/**")
 						.permitAll()
 						.antMatchers("/v2/api-docs",
@@ -68,7 +71,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 								"/webjars/**")
 						.permitAll()
 						.anyRequest()
-						.authenticated())
+						.authenticated())//no special states so only checks if users are authenticated currently
 				.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.exceptionHandling(exceptions -> exceptions
@@ -95,7 +98,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Bean
 	JwtEncoder jwtEncoder() {
-		JWK jwk = new RSAKey.Builder(this.publicKey).privateKey(this.privateKey).build();
+		JWK jwk = new RSAKey.Builder(this.publicKey).privateKey(this.privateKey).build();//uses public and private keys to configure jwt on backend
 		JWKSource<SecurityContext> jwks = new ImmutableJWKSet<>(new JWKSet(jwk));
 		return new NimbusJwtEncoder(jwks);
 	}

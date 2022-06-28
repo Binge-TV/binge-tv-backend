@@ -31,7 +31,7 @@ public class JwtProvider {
 				.expiresAt(Instant.now().plusMillis(jwtExpirationInMillis))
 				.subject(username)
 				.claim("scope", "ROLE_USER")
-				.build();
+				.build(); //build refresh tokens and sets expiration time
 		
 		return this.jwtEncoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
 	}

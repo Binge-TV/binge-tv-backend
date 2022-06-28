@@ -1,8 +1,8 @@
 package org.cory.rice.bingetv.services;
-import org.cory.rice.bingetv.models.User;
-import org.cory.rice.bingetv.repository.UserRepository;
 
 import lombok.AllArgsConstructor;
+import org.cory.rice.bingetv.models.User;
+import org.cory.rice.bingetv.repository.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,10 +18,9 @@ import static java.util.Collections.singletonList;
 
 @Service
 @AllArgsConstructor
+//class implements UserDetailsService to load a user based on username and enables spring securoty for user
 public class UserDetailsServiceImpl implements UserDetailsService {
 	private final UserRepository userRepository;
-	
-	
 	@Override
 	@Transactional(readOnly = true)
 	public UserDetails loadUserByUsername(String username) {

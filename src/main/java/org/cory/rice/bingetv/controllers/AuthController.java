@@ -1,22 +1,25 @@
 package org.cory.rice.bingetv.controllers;
 
 import lombok.AllArgsConstructor;
-import org.cory.rice.bingetv.dto.*;
+import org.cory.rice.bingetv.dto.AuthenticationResponse;
+import org.cory.rice.bingetv.dto.LoginRequest;
+import org.cory.rice.bingetv.dto.RefreshTokenRequest;
+import org.cory.rice.bingetv.dto.RegisterRequest;
 import org.cory.rice.bingetv.services.AuthService;
 import org.cory.rice.bingetv.services.RefreshTokenService;
 import org.cory.rice.bingetv.services.UserDetailsServiceImpl;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
 import static org.springframework.http.HttpStatus.OK;
+
 @RestController
 @RequestMapping("/api/v1/auth")
 @AllArgsConstructor
 public class AuthController {
-	
+//	endpoints for all auth related things for the front end connect
 	private final AuthService authService;
 	private final RefreshTokenService refreshTokenService;
 	private final UserDetailsServiceImpl userDetailsServiceImpl;

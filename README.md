@@ -3,26 +3,31 @@
 
 <h5>Cory Rice</h5>
 <a href="https://github.com/crice802" target="_blank">
-      <img src="https://img.shields.io/badge/-Portfolio: github.com/crice802-darkgreen?style=flat&logo=medium"/>
-   </a>
-   <a href="https://www.linkedin.com/in/crice802/" target="_blank">
-      <img src="https://img.shields.io/badge/-linkedin.com/in/crice802/-blue?style=flat&``logo=Linkedin&logoColor=white">
-   </a> 
-   <a href="mailto:rcrice@gmail.com" target="_blank">
-      <img src="https://img.shields.io/badge/-rcrice@gmail.com-c14438?style=flat&logo=Gmail&``logoColor=white">
-   </a>
+<img src="https://img.shields.io/badge/-Portfolio: github.com/crice802-darkgreen?style=flat&logo=medium"/>
+</a>
+<a href="https://www.linkedin.com/in/crice802/" target="_blank">
+<img src="https://img.shields.io/badge/-linkedin.com/in/crice802/-blue?style=flat&``logo=Linkedin&logoColor=white">
+</a>
+<a href="mailto:rcrice@gmail.com" target="_blank">
+<img src="https://img.shields.io/badge/-rcrice@gmail.com-c14438?style=flat&logo=Gmail&``logoColor=white">
+</a>
 </div>
 
 #### Link to frontend repo
+
 [Binged[TV]] (https://github.com/crice802/binge-tv-frontend)
+
 #### Link to backend repo
+
 [Binged[TV]] (https://github.com/crice802/binge-tv-backend)
 
 <h1>Description</h1>
 <p>Binge[TV] is a TV show tracking app, where you can search all of your favorite shows. Create a list of favorite shows you have watched, or want to watch </p>
 
 ## :computer: Technologies used
+
 #### backend:
+
 ![SpringBoot](https://img.shields.io/badge/Spring_Boot-F2F4F9?style=for-the-badge&logo=spring-boot)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)
@@ -32,7 +37,9 @@
 ![PostMan](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white)
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 ![JUnit5](https://img.shields.io/badge/Junit5-25A162?style=for-the-badge&logo=junit5&logoColor=white)
+
 #### frontend:
+
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![React ROuter](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
@@ -62,6 +69,7 @@
 </details>
 
 ## Next Steps
+
 ### Upcoming Features
 
 - [x] Add personal info in profile section: Bio.
@@ -75,9 +83,11 @@
 - [ ] Track dates of when shows have been viewed
 
 ## API Reference:
+
 [TheMovieDatabaseAPI] (https://developers.themoviedb.org/3/getting-started/introduction)
 
 ![TMDB](src/main/resources/static/Tmdblogo.png)
 
 ### Credits:
+
 <p>Aftin Combs: UX Design, Custom Assets</p>

@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 @Slf4j
+//sends the user the email and verify it was received
 class MailService {
 	
 	private final JavaMailSender mailSender;

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface ShowRepository extends JpaRepository<Shows,  Long>{
-	Optional<Shows> findByShowName(String showName);
+public interface ShowRepository extends JpaRepository<Shows, Long> {
 	Optional<Shows> findByShowId(Long showId);
 }

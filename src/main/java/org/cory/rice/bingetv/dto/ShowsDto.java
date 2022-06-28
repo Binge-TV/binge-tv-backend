@@ -12,11 +12,11 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ShowsDto implements Serializable {
+//	handles data mapping for Shows
 	private Long id;
 	private Long showId;
 	private String showName;
 	private User users;
 	
 	
-
 }
