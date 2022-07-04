@@ -15,16 +15,21 @@
 
 #### Link to frontend repo
 
-[Binged[TV]] (https://github.com/crice802/binge-tv-frontend)
+[Binge[TV]] (https://github.com/crice802/binge-tv-frontend)
 
 #### Link to backend repo
 
-[Binged[TV]] (https://github.com/crice802/binge-tv-backend)
+[Binge[TV]] (https://github.com/crice802/binge-tv-backend)
 
 <h1>Description</h1>
 <p>Binge[TV] is a TV show tracking app, where you can search all of your favorite shows. Create a list of favorite shows you have watched, or want to watch </p>
 
-## :computer: Technologies used
+## Documentaions
+
+![Binge[TV] backend API Docs](src/main/resources/static/backend-api.png)
+![Binge[TV] Entity Relationship Diagram](src/main/resources/static/bingeTV-ERD.png)
+
+##  Technologies used
 
 #### backend:
 
