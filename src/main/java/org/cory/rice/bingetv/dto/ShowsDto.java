@@ -3,7 +3,7 @@ package org.cory.rice.bingetv.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.cory.rice.bingetv.models.User;
+import org.cory.rice.bingetv.models.Users;
 
 import java.io.Serializable;
 
@@ -16,7 +16,7 @@ public class ShowsDto implements Serializable {
 	private Long id;
 	private Long showId;
 	private String showName;
-	private User users;
+	private Users users;
 	
 	
 }

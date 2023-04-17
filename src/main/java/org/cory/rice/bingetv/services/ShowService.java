@@ -6,8 +6,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.cory.rice.bingetv.dto.ShowsDto;
 import org.cory.rice.bingetv.exceptions.BingeTvException;
 import org.cory.rice.bingetv.mappers.ShowMapper;
+import org.cory.rice.bingetv.models.BingeList;
 import org.cory.rice.bingetv.models.Shows;
-import org.cory.rice.bingetv.models.User;
+import org.cory.rice.bingetv.models.Users;
+import org.cory.rice.bingetv.repository.BingeListRepository;
 import org.cory.rice.bingetv.repository.ShowRepository;
 import org.cory.rice.bingetv.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,21 +29,18 @@ public class ShowService {
 	@Autowired
 	private ShowRepository showRepository;
 	@Autowired
-	UserDetailsServiceImpl userDetailsService;
+	private BingeListRepository bingeListRepository;
 	@Autowired
 	private ShowMapper showMapper;
 	@Autowired
 	private UserRepository userRepository;
 	
-	public Object saveShow(Shows shows) {
+	public Object saveShow(BingeList shows) {
 		String username = shows.getUsers().getUsername(); //gets username from show
-		User userRepo = userRepository.findByUsername(username).orElseThrow(); //finds user by username
-		shows.setUsers(userRepo); //sets current user into show
-		Shows savedShow = showRepository.save(shows); //saves show
-		return savedShow;
-		
+		Users usersRepo = userRepository.findByUsername(username).orElseThrow(); //finds user by username
+		shows.setUsers(usersRepo); //sets current user into show
+		return bingeListRepository.save(shows);
 	}
-	
 	
 	public List<ShowsDto> getAllShows() { //returns list of all shows using mapper
 		return showRepository.findAll().stream()

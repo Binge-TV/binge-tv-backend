@@ -5,8 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.cory.rice.bingetv.dto.ShowsDto;
 import org.cory.rice.bingetv.exceptions.BingeTvException;
-import org.cory.rice.bingetv.models.Shows;
-import org.cory.rice.bingetv.models.User;
+import org.cory.rice.bingetv.models.BingeList;
+import org.cory.rice.bingetv.models.Users;
+import org.cory.rice.bingetv.repository.BingeListRepository;
 import org.cory.rice.bingetv.services.ApiService;
 import org.cory.rice.bingetv.services.ProfileService;
 import org.cory.rice.bingetv.services.ShowService;
@@ -30,10 +31,13 @@ public class ShowController {
 //enpoints for all show and external api related communications
 	@Autowired
 	private ShowService showService;
+	@Autowired
 	private ApiService apiService;
 	@Autowired
 	private ProfileService profileService;
-	
+	@Autowired
+	private BingeListRepository bingeListRepository;
+
 	public ShowController(ApiService apiService, ShowService showService) {
 		this.apiService = apiService;
 		this.showService = showService;
@@ -55,8 +59,8 @@ public class ShowController {
 	}
 	
 	@PostMapping("{showId}/add")
-	public ResponseEntity<Void> createShow(@RequestBody Shows shows) {
-		showService.saveShow(shows);
+	public ResponseEntity<Void> createShow(@RequestBody BingeList bingeList) {
+		showService.saveShow(bingeList);
 		return new ResponseEntity<>(CREATED);
 	}
 	
@@ -66,7 +70,7 @@ public class ShowController {
 	}
 	
 	@GetMapping("{showId}/get-user")
-	public User getUserByUsername(@RequestBody String username) {
+	public Users getUserByUsername(@RequestBody String username) {
 		return profileService.getUserByUsername(username).orElseThrow(() ->
 				new BingeTvException("Users not found with username: " + username));
 	}

@@ -14,9 +14,12 @@ public class UserDto {
 //	handles data mapping for User in junction with MapStruct library
 	private Long userId;
 	private String username;
+	private String firstName;
+	private String lastName;
 	private String email;
 	private String bio;
-	private Set<ShowsDto> bingedList;
+	private BingeListDto bingeList;
 	private Instant created;
-	private String password;
+	private Instant updated;
+	private boolean enabled;
 }

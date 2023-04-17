@@ -3,8 +3,7 @@ package org.cory.rice.bingetv.controllers;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.cory.rice.bingetv.dto.UserDto;
-import org.cory.rice.bingetv.models.User;
-import org.cory.rice.bingetv.repository.UserRepository;
+import org.cory.rice.bingetv.models.Users;
 import org.cory.rice.bingetv.services.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,9 +37,9 @@ public class ProfileController {
 	}
 	
 	@PatchMapping("{userId}")
-	public ResponseEntity<User> updateUserProfile(@PathVariable Long userId, @RequestBody User userDetails) {
-		profileService.updateUser(userId, userDetails);
-		return ResponseEntity.ok(userDetails);
+	public ResponseEntity<Users> updateUserProfile(@PathVariable Long userId, @RequestBody Users usersDetails) {
+		profileService.updateUser(userId, usersDetails);
+		return ResponseEntity.ok(usersDetails);
 	}
 	
 	@DeleteMapping("{userId}")

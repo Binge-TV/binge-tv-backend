@@ -1,24 +1,21 @@
 package org.cory.rice.bingetv.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
-import javax.persistence.*;
 
-import static javax.persistence.CascadeType.ALL;
-import static javax.persistence.FetchType.LAZY;
+import java.time.Instant;
+import java.util.Objects;
 
 @Getter
 @Setter
+@ToString
+@RequiredArgsConstructor
 @AllArgsConstructor
-@NoArgsConstructor
 @Entity(name = "Shows")
 public class Shows {
-	
-	
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
@@ -27,14 +24,23 @@ public class Shows {
 	private Long showId;
 	@Column
 	private String showName;
-	
-	@JsonBackReference
-	@ManyToOne(targetEntity = User.class, fetch = LAZY, cascade = ALL)
-	@JoinColumn(name = "users_user_id")
-	private User users;
-	
-	
-	public Shows(User users) {
-		this.users = users;
+	@Column
+	private String imageUrl;
+	@Column
+	private Instant dateAdded;
+	@Column
+	private Instant dateUpdated;
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Shows shows = (Shows) o;
+		return Objects.equals(id, shows.id) && Objects.equals(showId, shows.showId) && Objects.equals(showName, shows.showName) && Objects.equals(imageUrl, shows.imageUrl) && Objects.equals(dateAdded, shows.dateAdded) && Objects.equals(dateUpdated, shows.dateUpdated);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, showId, showName, imageUrl, dateAdded, dateUpdated);
 	}
 }
