@@ -2733,3 +2733,279 @@ Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'sp
 2023-04-16T19:59:49.975-04:00  INFO 23808 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-04-16T19:59:49.977-04:00  INFO 23808 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-04-16T19:59:50.303-04:00  INFO 23808 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-16T22:34:10.781-04:00  INFO 24364 --- [restartedMain] o.c.r.bingetv.BingeTvBackendApplication  : Starting BingeTvBackendApplication using Java 18.0.1.1 with PID 24364 (C:\Users\erhin\OneDrive\Documents\BingeTV\binge-tv-backend\target\classes started by erhin in C:\Users\erhin\OneDrive\Documents\BingeTV\binge-tv-backend)
+2023-04-16T22:34:10.782-04:00  INFO 24364 --- [restartedMain] o.c.r.bingetv.BingeTvBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-04-16T22:34:10.805-04:00  INFO 24364 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-16T22:34:10.805-04:00  INFO 24364 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-16T22:34:11.292-04:00  INFO 24364 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-16T22:34:11.327-04:00  INFO 24364 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 3 JPA repository interfaces.
+2023-04-16T22:34:11.637-04:00  INFO 24364 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-16T22:34:11.643-04:00  INFO 24364 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-16T22:34:11.643-04:00  INFO 24364 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-16T22:34:11.675-04:00  INFO 24364 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-16T22:34:11.675-04:00  INFO 24364 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 870 ms
+2023-04-16T22:34:11.780-04:00 DEBUG 24364 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2023-04-16T22:34:11.789-04:00  INFO 24364 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-16T22:34:11.823-04:00  INFO 24364 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-16T22:34:11.987-04:00  INFO 24364 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-16T22:34:13.528-04:00  INFO 24364 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@557ad379
+2023-04-16T22:34:13.528-04:00  INFO 24364 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-16T22:34:13.576-04:00  INFO 24364 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-16T22:34:14.672-04:00  INFO 24364 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-16T22:34:14.717-04:00  INFO 24364 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-16T22:34:14.763-04:00 DEBUG 24364 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:34:14.783-04:00 DEBUG 24364 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:34:14.813-04:00 DEBUG 24364 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:34:14.838-04:00 DEBUG 24364 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:34:14.889-04:00 DEBUG 24364 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:34:14.890-04:00 DEBUG 24364 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:34:14.895-04:00 DEBUG 24364 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:34:14.898-04:00 DEBUG 24364 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:34:14.899-04:00 DEBUG 24364 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:34:14.904-04:00 DEBUG 24364 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:34:14.982-04:00  INFO 24364 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String org.cory.rice.bingetv.services.ApiService.apiKey
+2023-04-16T22:34:15.005-04:00  WARN 24364 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-16T22:34:15.162-04:00  INFO 24364 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-04-16T22:34:17.278-04:00  INFO 24364 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@a8ca304, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1bb473ca, org.springframework.security.web.context.SecurityContextHolderFilter@30e94d33, org.springframework.security.web.header.HeaderWriterFilter@e037413, org.springframework.web.filter.CorsFilter@6d6ba1a5, org.springframework.security.web.csrf.CsrfFilter@1b5f8772, org.springframework.security.web.authentication.logout.LogoutFilter@52e73750, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@252a7061, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e8dce55, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@25209c1b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f89cc6, org.springframework.security.web.access.ExceptionTranslationFilter@5c35eac, org.springframework.security.web.access.intercept.AuthorizationFilter@725d06c3]
+2023-04-16T22:34:17.398-04:00  INFO 24364 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-04-16T22:34:17.428-04:00  INFO 24364 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-16T22:34:17.435-04:00  INFO 24364 --- [restartedMain] o.c.r.bingetv.BingeTvBackendApplication  : Started BingeTvBackendApplication in 6.858 seconds (process running for 7.225)
+2023-04-16T22:34:18.003-04:00  INFO 24364 --- [RMI TCP Connection(2)-192.168.1.13] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-16T22:34:18.003-04:00  INFO 24364 --- [RMI TCP Connection(2)-192.168.1.13] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-16T22:34:18.004-04:00  INFO 24364 --- [RMI TCP Connection(2)-192.168.1.13] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-04-16T22:34:39.698-04:00  INFO 24364 --- [http-nio-8080-exec-1] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000xf70x010x000x000xf30x030x030x8a0x110xfd'0xf0GsvKWp0x9e.0x04Fm0x920xae0x8f0x010xdeK0xd20xff?0x1d0x10GG0xf80xb0} ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:407) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:263) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-04-16T22:35:03.384-04:00  INFO 24364 --- [http-nio-8080-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000xf70x010x000x000xf30x030x030xa00xc80xe00x83g0xf20xf2C0xa60xdfZ0xf00xc70xb3/0x160xc40x190x020x80+0xf3/0xbc0x850xc00xf2]0xb6/0xc50x0f ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:407) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:263) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-04-16T22:36:25.074-04:00  INFO 24364 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-16T22:36:25.075-04:00  INFO 24364 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-16T22:36:25.379-04:00  INFO 24364 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-16T22:36:27.561-04:00  INFO 29776 --- [restartedMain] o.c.r.bingetv.BingeTvBackendApplication  : Starting BingeTvBackendApplication using Java 18.0.1.1 with PID 29776 (C:\Users\erhin\OneDrive\Documents\BingeTV\binge-tv-backend\target\classes started by erhin in C:\Users\erhin\OneDrive\Documents\BingeTV\binge-tv-backend)
+2023-04-16T22:36:27.562-04:00  INFO 29776 --- [restartedMain] o.c.r.bingetv.BingeTvBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-04-16T22:36:27.583-04:00  INFO 29776 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-16T22:36:27.583-04:00  INFO 29776 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-16T22:36:27.966-04:00  INFO 29776 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-16T22:36:27.993-04:00  INFO 29776 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 3 JPA repository interfaces.
+2023-04-16T22:36:28.244-04:00  INFO 29776 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-16T22:36:28.248-04:00  INFO 29776 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-16T22:36:28.248-04:00  INFO 29776 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-16T22:36:28.273-04:00  INFO 29776 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-16T22:36:28.274-04:00  INFO 29776 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 691 ms
+2023-04-16T22:36:28.370-04:00 DEBUG 29776 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2023-04-16T22:36:28.377-04:00  INFO 29776 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-16T22:36:28.396-04:00  INFO 29776 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-16T22:36:28.508-04:00  INFO 29776 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-16T22:36:29.975-04:00  INFO 29776 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@624a7613
+2023-04-16T22:36:29.976-04:00  INFO 29776 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-16T22:36:30.024-04:00  INFO 29776 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-16T22:36:31.001-04:00  INFO 29776 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-16T22:36:31.006-04:00  INFO 29776 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-16T22:36:31.041-04:00 DEBUG 29776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:36:31.058-04:00 DEBUG 29776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:36:31.084-04:00 DEBUG 29776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:36:31.110-04:00 DEBUG 29776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:36:31.151-04:00 DEBUG 29776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:36:31.153-04:00 DEBUG 29776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:36:31.157-04:00 DEBUG 29776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:36:31.160-04:00 DEBUG 29776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:36:31.160-04:00 DEBUG 29776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:36:31.165-04:00 DEBUG 29776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:36:31.221-04:00  INFO 29776 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String org.cory.rice.bingetv.services.ApiService.apiKey
+2023-04-16T22:36:31.241-04:00  WARN 29776 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-16T22:36:31.383-04:00  INFO 29776 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-04-16T22:36:32.254-04:00  INFO 29776 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2ba02f58, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@26e9841f, org.springframework.security.web.context.SecurityContextHolderFilter@4a5da6d9, org.springframework.security.web.header.HeaderWriterFilter@744aad7c, org.springframework.web.filter.CorsFilter@4884748b, org.springframework.security.web.csrf.CsrfFilter@89cdb01, org.springframework.security.web.authentication.logout.LogoutFilter@2149272f, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@1e3e07be, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@562eaaec, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@689e7bfc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d156484, org.springframework.security.web.access.ExceptionTranslationFilter@4d4759ce, org.springframework.security.web.access.intercept.AuthorizationFilter@72c97d86]
+2023-04-16T22:36:32.361-04:00  INFO 29776 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-04-16T22:36:32.390-04:00  INFO 29776 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-16T22:36:32.396-04:00  INFO 29776 --- [restartedMain] o.c.r.bingetv.BingeTvBackendApplication  : Started BingeTvBackendApplication in 5.002 seconds (process running for 5.279)
+2023-04-16T22:36:32.757-04:00  INFO 29776 --- [RMI TCP Connection(2)-192.168.1.13] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-16T22:36:32.758-04:00  INFO 29776 --- [RMI TCP Connection(2)-192.168.1.13] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-16T22:36:32.758-04:00  INFO 29776 --- [RMI TCP Connection(2)-192.168.1.13] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-04-16T22:36:35.597-04:00 DEBUG 29776 --- [http-nio-8080-exec-2] o.j.s.OpenEntityManagerInViewInterceptor : Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2023-04-16T22:36:35.604-04:00 DEBUG 29776 --- [http-nio-8080-exec-2] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2023-04-16T22:36:56.476-04:00 DEBUG 29776 --- [http-nio-8080-exec-4] o.j.s.OpenEntityManagerInViewInterceptor : Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2023-04-16T22:36:56.478-04:00 DEBUG 29776 --- [http-nio-8080-exec-4] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2023-04-16T22:37:51.008-04:00  INFO 29776 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-16T22:37:51.009-04:00  INFO 29776 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-16T22:37:51.325-04:00  INFO 29776 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-16T22:37:53.461-04:00  INFO 9108 --- [restartedMain] o.c.r.bingetv.BingeTvBackendApplication  : Starting BingeTvBackendApplication using Java 18.0.1.1 with PID 9108 (C:\Users\erhin\OneDrive\Documents\BingeTV\binge-tv-backend\target\classes started by erhin in C:\Users\erhin\OneDrive\Documents\BingeTV\binge-tv-backend)
+2023-04-16T22:37:53.462-04:00  INFO 9108 --- [restartedMain] o.c.r.bingetv.BingeTvBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-04-16T22:37:53.483-04:00  INFO 9108 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-16T22:37:53.483-04:00  INFO 9108 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-16T22:37:53.867-04:00  INFO 9108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-16T22:37:53.894-04:00  INFO 9108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 3 JPA repository interfaces.
+2023-04-16T22:37:54.137-04:00  INFO 9108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-16T22:37:54.140-04:00  INFO 9108 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-16T22:37:54.141-04:00  INFO 9108 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-16T22:37:54.167-04:00  INFO 9108 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-16T22:37:54.167-04:00  INFO 9108 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 683 ms
+2023-04-16T22:37:54.260-04:00 DEBUG 9108 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2023-04-16T22:37:54.266-04:00  INFO 9108 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-16T22:37:54.285-04:00  INFO 9108 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-16T22:37:54.394-04:00  INFO 9108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-16T22:37:55.876-04:00  INFO 9108 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3ad4b2f1
+2023-04-16T22:37:55.877-04:00  INFO 9108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-16T22:37:55.926-04:00  INFO 9108 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-16T22:37:56.824-04:00  INFO 9108 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-16T22:37:56.828-04:00  INFO 9108 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-16T22:37:56.866-04:00 DEBUG 9108 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:37:56.883-04:00 DEBUG 9108 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:37:56.910-04:00 DEBUG 9108 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:37:56.934-04:00 DEBUG 9108 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:37:56.974-04:00 DEBUG 9108 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:37:56.975-04:00 DEBUG 9108 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:37:56.981-04:00 DEBUG 9108 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:37:56.984-04:00 DEBUG 9108 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:37:56.984-04:00 DEBUG 9108 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:37:56.989-04:00 DEBUG 9108 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:37:57.044-04:00  INFO 9108 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String org.cory.rice.bingetv.services.ApiService.apiKey
+2023-04-16T22:37:57.063-04:00  WARN 9108 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-16T22:37:57.201-04:00  INFO 9108 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-04-16T22:37:58.061-04:00  INFO 9108 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@788684d8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@66c5fb4e, org.springframework.security.web.context.SecurityContextHolderFilter@4d1bd322, org.springframework.security.web.header.HeaderWriterFilter@48032b19, org.springframework.web.filter.CorsFilter@6be2c6f2, org.springframework.security.web.csrf.CsrfFilter@daf3fc9, org.springframework.security.web.authentication.logout.LogoutFilter@67f4ac30, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@6b1736f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@eec006d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b4105d1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3b789e6, org.springframework.security.web.access.ExceptionTranslationFilter@2a15726e, org.springframework.security.web.access.intercept.AuthorizationFilter@53b4613d]
+2023-04-16T22:37:58.171-04:00  INFO 9108 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-04-16T22:37:58.198-04:00  INFO 9108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-16T22:37:58.204-04:00  INFO 9108 --- [restartedMain] o.c.r.bingetv.BingeTvBackendApplication  : Started BingeTvBackendApplication in 4.906 seconds (process running for 5.17)
+2023-04-16T22:37:58.641-04:00  INFO 9108 --- [RMI TCP Connection(1)-192.168.1.13] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-16T22:37:58.641-04:00  INFO 9108 --- [RMI TCP Connection(1)-192.168.1.13] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-16T22:37:58.641-04:00  INFO 9108 --- [RMI TCP Connection(1)-192.168.1.13] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-04-16T22:38:00.453-04:00 DEBUG 9108 --- [http-nio-8080-exec-2] o.j.s.OpenEntityManagerInViewInterceptor : Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2023-04-16T22:38:00.460-04:00 DEBUG 9108 --- [http-nio-8080-exec-2] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2023-04-16T22:38:52.638-04:00  INFO 9108 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-16T22:38:52.640-04:00  INFO 9108 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-16T22:38:52.941-04:00  INFO 9108 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-16T22:38:54.953-04:00  INFO 28448 --- [restartedMain] o.c.r.bingetv.BingeTvBackendApplication  : Starting BingeTvBackendApplication using Java 18.0.1.1 with PID 28448 (C:\Users\erhin\OneDrive\Documents\BingeTV\binge-tv-backend\target\classes started by erhin in C:\Users\erhin\OneDrive\Documents\BingeTV\binge-tv-backend)
+2023-04-16T22:38:54.953-04:00  INFO 28448 --- [restartedMain] o.c.r.bingetv.BingeTvBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-04-16T22:38:54.977-04:00  INFO 28448 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-16T22:38:54.977-04:00  INFO 28448 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-16T22:38:55.365-04:00  INFO 28448 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-16T22:38:55.393-04:00  INFO 28448 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 3 JPA repository interfaces.
+2023-04-16T22:38:55.623-04:00  INFO 28448 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-16T22:38:55.627-04:00  INFO 28448 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-16T22:38:55.627-04:00  INFO 28448 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-16T22:38:55.651-04:00  INFO 28448 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-16T22:38:55.651-04:00  INFO 28448 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 674 ms
+2023-04-16T22:38:55.749-04:00 DEBUG 28448 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2023-04-16T22:38:55.756-04:00  INFO 28448 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-16T22:38:55.774-04:00  INFO 28448 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-16T22:38:55.882-04:00  INFO 28448 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-16T22:38:57.340-04:00  INFO 28448 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@9cc3bf2
+2023-04-16T22:38:57.342-04:00  INFO 28448 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-16T22:38:57.389-04:00  INFO 28448 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-16T22:38:58.311-04:00  INFO 28448 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-16T22:38:58.316-04:00  INFO 28448 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-16T22:38:58.351-04:00 DEBUG 28448 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:38:58.367-04:00 DEBUG 28448 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:38:58.391-04:00 DEBUG 28448 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:38:58.412-04:00 DEBUG 28448 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:38:58.449-04:00 DEBUG 28448 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:38:58.450-04:00 DEBUG 28448 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:38:58.455-04:00 DEBUG 28448 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:38:58.458-04:00 DEBUG 28448 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:38:58.458-04:00 DEBUG 28448 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:38:58.463-04:00 DEBUG 28448 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:38:58.516-04:00  INFO 28448 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String org.cory.rice.bingetv.services.ApiService.apiKey
+2023-04-16T22:38:58.535-04:00  WARN 28448 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-16T22:38:58.677-04:00  INFO 28448 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-04-16T22:38:59.526-04:00  INFO 28448 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@38b2b947, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@432fcf68, org.springframework.security.web.context.SecurityContextHolderFilter@864c68b, org.springframework.security.web.header.HeaderWriterFilter@2bbbd816, org.springframework.web.filter.CorsFilter@593dc95c, org.springframework.security.web.csrf.CsrfFilter@42ffb662, org.springframework.security.web.authentication.logout.LogoutFilter@46c3d80a, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@4ffabe57, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@12f05b17, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4fe47e81, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@59589060, org.springframework.security.web.access.ExceptionTranslationFilter@9ff17d, org.springframework.security.web.access.intercept.AuthorizationFilter@492a81ea]
+2023-04-16T22:38:59.638-04:00  INFO 28448 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-04-16T22:38:59.669-04:00  INFO 28448 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-16T22:38:59.677-04:00  INFO 28448 --- [restartedMain] o.c.r.bingetv.BingeTvBackendApplication  : Started BingeTvBackendApplication in 4.896 seconds (process running for 5.172)
+2023-04-16T22:39:00.127-04:00  INFO 28448 --- [RMI TCP Connection(1)-192.168.1.13] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-16T22:39:00.127-04:00  INFO 28448 --- [RMI TCP Connection(1)-192.168.1.13] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-16T22:39:00.128-04:00  INFO 28448 --- [RMI TCP Connection(1)-192.168.1.13] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-04-16T22:39:02.977-04:00  WARN 28448 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2023-04-16T22:40:00.221-04:00  INFO 28448 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-16T22:40:00.222-04:00  INFO 28448 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-16T22:40:00.561-04:00  INFO 28448 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-16T22:40:02.739-04:00  INFO 26776 --- [restartedMain] o.c.r.bingetv.BingeTvBackendApplication  : Starting BingeTvBackendApplication using Java 18.0.1.1 with PID 26776 (C:\Users\erhin\OneDrive\Documents\BingeTV\binge-tv-backend\target\classes started by erhin in C:\Users\erhin\OneDrive\Documents\BingeTV\binge-tv-backend)
+2023-04-16T22:40:02.740-04:00  INFO 26776 --- [restartedMain] o.c.r.bingetv.BingeTvBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-04-16T22:40:02.761-04:00  INFO 26776 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-16T22:40:02.761-04:00  INFO 26776 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-16T22:40:03.140-04:00  INFO 26776 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-16T22:40:03.168-04:00  INFO 26776 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 3 JPA repository interfaces.
+2023-04-16T22:40:03.399-04:00  INFO 26776 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-16T22:40:03.403-04:00  INFO 26776 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-16T22:40:03.403-04:00  INFO 26776 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-16T22:40:03.479-04:00  INFO 26776 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-16T22:40:03.479-04:00  INFO 26776 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 718 ms
+2023-04-16T22:40:03.573-04:00 DEBUG 26776 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2023-04-16T22:40:03.578-04:00  INFO 26776 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-16T22:40:03.597-04:00  INFO 26776 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-16T22:40:03.703-04:00  INFO 26776 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-16T22:40:05.211-04:00  INFO 26776 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4a4609f8
+2023-04-16T22:40:05.212-04:00  INFO 26776 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-16T22:40:05.254-04:00  INFO 26776 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-16T22:40:06.198-04:00  INFO 26776 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-16T22:40:06.202-04:00  INFO 26776 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-16T22:40:06.237-04:00 DEBUG 26776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:40:06.254-04:00 DEBUG 26776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:40:06.279-04:00 DEBUG 26776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:40:06.302-04:00 DEBUG 26776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:40:06.340-04:00 DEBUG 26776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:40:06.342-04:00 DEBUG 26776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:40:06.347-04:00 DEBUG 26776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:40:06.350-04:00 DEBUG 26776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:40:06.350-04:00 DEBUG 26776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:40:06.356-04:00 DEBUG 26776 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2023-04-16T22:40:06.409-04:00  INFO 26776 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String org.cory.rice.bingetv.services.ApiService.apiKey
+2023-04-16T22:40:06.430-04:00  WARN 26776 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-16T22:40:06.573-04:00  INFO 26776 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-04-16T22:40:07.743-04:00  INFO 26776 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@aec994, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1cbc39c3, org.springframework.security.web.context.SecurityContextHolderFilter@287fa3bf, org.springframework.security.web.header.HeaderWriterFilter@3de58393, org.springframework.web.filter.CorsFilter@781b4b03, org.springframework.security.web.csrf.CsrfFilter@376d761c, org.springframework.security.web.authentication.logout.LogoutFilter@400bcc10, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@44940af5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14de6434, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@287cdfdc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@463bcc5a, org.springframework.security.web.access.ExceptionTranslationFilter@42ffb662, org.springframework.security.web.access.intercept.AuthorizationFilter@3a9aee5d]
+2023-04-16T22:40:07.849-04:00  INFO 26776 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-04-16T22:40:07.879-04:00  INFO 26776 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-16T22:40:07.886-04:00  INFO 26776 --- [restartedMain] o.c.r.bingetv.BingeTvBackendApplication  : Started BingeTvBackendApplication in 5.311 seconds (process running for 5.581)
+2023-04-16T22:40:08.418-04:00  INFO 26776 --- [RMI TCP Connection(2)-192.168.1.13] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-16T22:40:08.418-04:00  INFO 26776 --- [RMI TCP Connection(2)-192.168.1.13] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-16T22:40:08.419-04:00  INFO 26776 --- [RMI TCP Connection(2)-192.168.1.13] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-04-16T22:40:26.237-04:00 DEBUG 26776 --- [http-nio-8080-exec-2] o.j.s.OpenEntityManagerInViewInterceptor : Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2023-04-16T22:40:26.243-04:00 DEBUG 26776 --- [http-nio-8080-exec-2] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(173475706<open>)] for JPA transaction
+2023-04-16T22:40:26.243-04:00 DEBUG 26776 --- [http-nio-8080-exec-2] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [org.cory.rice.bingetv.services.ShowService.getAllShows]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2023-04-16T22:40:26.277-04:00 DEBUG 26776 --- [http-nio-8080-exec-2] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@657aedcd]
+2023-04-16T22:40:26.278-04:00 DEBUG 26776 --- [http-nio-8080-exec-2] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(173475706<open>)] for JPA transaction
+2023-04-16T22:40:26.278-04:00 DEBUG 26776 --- [http-nio-8080-exec-2] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2023-04-16T22:40:26.356-04:00 DEBUG 26776 --- [http-nio-8080-exec-2] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction commit
+2023-04-16T22:40:26.356-04:00 DEBUG 26776 --- [http-nio-8080-exec-2] o.s.orm.jpa.JpaTransactionManager        : Committing JPA transaction on EntityManager [SessionImpl(173475706<open>)]
+2023-04-16T22:40:26.385-04:00 DEBUG 26776 --- [http-nio-8080-exec-2] o.s.orm.jpa.JpaTransactionManager        : Not closing pre-bound JPA EntityManager after transaction
+2023-04-16T22:40:26.391-04:00 DEBUG 26776 --- [http-nio-8080-exec-2] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2023-04-16T22:42:32.138-04:00 DEBUG 26776 --- [http-nio-8080-exec-5] o.j.s.OpenEntityManagerInViewInterceptor : Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2023-04-16T22:42:32.139-04:00 DEBUG 26776 --- [http-nio-8080-exec-5] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2023-04-16T22:42:37.831-04:00 DEBUG 26776 --- [http-nio-8080-exec-6] o.j.s.OpenEntityManagerInViewInterceptor : Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2023-04-16T22:42:37.832-04:00 DEBUG 26776 --- [http-nio-8080-exec-6] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2023-04-16T22:43:17.204-04:00 DEBUG 26776 --- [http-nio-8080-exec-7] o.j.s.OpenEntityManagerInViewInterceptor : Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2023-04-16T22:43:17.205-04:00 DEBUG 26776 --- [http-nio-8080-exec-7] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(724635985<open>)] for JPA transaction
+2023-04-16T22:43:17.205-04:00 DEBUG 26776 --- [http-nio-8080-exec-7] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [org.cory.rice.bingetv.services.ShowService.getAllShows]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2023-04-16T22:43:17.235-04:00 DEBUG 26776 --- [http-nio-8080-exec-7] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@21c97a21]
+2023-04-16T22:43:17.236-04:00 DEBUG 26776 --- [http-nio-8080-exec-7] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(724635985<open>)] for JPA transaction
+2023-04-16T22:43:17.236-04:00 DEBUG 26776 --- [http-nio-8080-exec-7] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2023-04-16T22:43:17.270-04:00 DEBUG 26776 --- [http-nio-8080-exec-7] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction commit
+2023-04-16T22:43:17.270-04:00 DEBUG 26776 --- [http-nio-8080-exec-7] o.s.orm.jpa.JpaTransactionManager        : Committing JPA transaction on EntityManager [SessionImpl(724635985<open>)]
+2023-04-16T22:43:17.301-04:00 DEBUG 26776 --- [http-nio-8080-exec-7] o.s.orm.jpa.JpaTransactionManager        : Not closing pre-bound JPA EntityManager after transaction
+2023-04-16T22:43:17.301-04:00 DEBUG 26776 --- [http-nio-8080-exec-7] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2023-04-16T22:47:19.270-04:00  INFO 26776 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-16T22:47:19.272-04:00  INFO 26776 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-16T22:47:19.562-04:00  INFO 26776 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
